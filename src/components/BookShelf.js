@@ -6,7 +6,6 @@ function BookShelf({ books, shelf, changeShelf }) {
     return (
         <div className="bookshelf">
             <h2 className="bookshelf-title">{shelf}</h2>
-
             {books.length ?
                 <div className="bookshelf-books">
                     <ol className="books-grid">
