@@ -20,7 +20,6 @@ function BooksApp() {
 
   function changeShelf(book, shelf) {
     BooksAPI.update(book, shelf)
-        .then(data => console.log(data))
     
     if (shelf === 'none') {
         setBooksOnShelf(prevBooks => prevBooks.filter(b=> b.id !== book.id))
@@ -29,7 +28,6 @@ function BooksApp() {
         setBooksOnShelf(prevBooks => prevBooks.filter(b => b.id !== book.id).concat(book))
     }
 }
-
   return (
     <div className='app'>
       <Switch>
