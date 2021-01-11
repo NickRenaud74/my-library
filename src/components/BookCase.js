@@ -1,30 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import React from 'react'
+import BookShelf from './BookShelf'
+import { Link } from 'react-router-dom'
 
-class BookCase extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>BookCase</h1>
-                <ol>
-                    {this.props.books.map(book => {
-                        return <li>{book.title}</li>
-                    })}
-                </ol>
-
+function BookCase({sortShelf, changeShelf}) {
+    
+    return (
+        <div className="list-books">
+            <div className="list-books-title">
+                <h1>My Library</h1>
+            </div>
+            <div className="list-books-content">
+                <div>
+                    <BookShelf
+                        books={sortShelf('currentlyReading')}
+                        shelf={'Currently Reading'}
+                        changeShelf={changeShelf}
+                    />
+                    <BookShelf
+                        books={sortShelf('wantToRead')}
+                        shelf={'Want To Read'}
+                        changeShelf={changeShelf}
+                    />
+                    <BookShelf
+                        books={sortShelf('read')}
+                        shelf={'Read'}
+                        changeShelf={changeShelf}
+                    />
+                </div>
+            </div>
+            <div className="open-search">
                 <Link to='/search' >
-                    <Button color='info' size='lg' className='open-search'>
-                        <FontAwesomeIcon icon={faPlusSquare} size='2x' />
-                    </Button>
+                    <button>Add a book</button>
                 </Link>
             </div>
-
-        )
-    }
+        </div>
+    )
 }
 
-export default BookCase;
+export default BookCase
