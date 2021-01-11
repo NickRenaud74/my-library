@@ -20,7 +20,7 @@ body, .app {
 }
 
 .list-books-title h1 {
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
   color: black;
 }
@@ -71,6 +71,22 @@ body, .app {
 
 .open-search button:hover {
   cursor: pointer;
+}
+
+.add-books-shelf {
+  text-align: center;
+  color: rgb(211, 211, 211);
+}
+
+.to-search button{
+  background:  rgb(211, 211, 211);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-image: url('./icons/add.svg');
+  background-position: center;
+  background-size: 50px;
 }
 
 /* search page */
@@ -201,4 +217,64 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+
+/* Modal */
+.modal {
+  color: white;
+  position: fixed;
+  z-index: 1;
+  padding: 100px 30px;
+  left: 10%;
+  top: 10%;
+  margin: 0;
+  width: 80%;
+  max-height: 50%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.book-description {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  text-align: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color:#bbb;
+  font-size: 3em;
+  font-weight: bolder;
+  transition: 0.3s;
+}
+
+.modal-header {
+  display: block;
+  text-align: center;
+}
+
+.modal-book-title {
+  font-size: 2rem;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px 25px;
+}
+
+.modal-book-info {
+  padding: 10px 30px;
+}
+
+
+.close-modal:hover,
+.close-modal:focus {
+  color: rgb(255, 253, 253);
+  text-decoration: none;
+  cursor: pointer;
 }
