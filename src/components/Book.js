@@ -1,7 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
+import BookModal from './BookModal'
 
 function Book({ book, changeShelf }) {
+    const [showModal, setShowModal] = useState(false)
+
+    function openModal() {
+        setShowModal(true)
+    }
+
+    function closeModal() {
+        setShowModal(false)
+    }
+
     return (
+
+        showModal ? <BookModal book={book} closeModal={closeModal}/> :
         <li>
             <div className="book">
                 <div className="book-top">
@@ -11,7 +24,8 @@ function Book({ book, changeShelf }) {
                             height: 193,
                             backgroundImage: book.imageLinks ?
                                 `url(${book.imageLinks.smallThumbnail})` : ''
-                         }}
+                        }}
+                        onClick={() => openModal()}
                     >
                     </div>
                     <div className="book-shelf-changer">
