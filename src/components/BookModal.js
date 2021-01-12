@@ -5,7 +5,7 @@ function BookModal({ book, closeModal}) {
     return (
         <div className="modal">
             <div className="modal-content">
-                <span className="close-modal" onClick={() => closeModal()}>×</span>
+                <span className="close-modal" onClick={closeModal}>×</span>
 
                 <div className="modal-header">
                     <h2 className="modal-book-title">{book.title}</h2>
