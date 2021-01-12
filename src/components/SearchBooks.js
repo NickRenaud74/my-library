@@ -38,9 +38,7 @@ function SearchBooks({ booksOnShelf, changeShelf }) {
     return (
         <div className="search-books">
             <div className="search-books-bar">
-                <Link to='/' >
-                    <button className="close-search">Close</button>
-                </Link>
+                <Link to='/' className="close-search"></Link>
                 <div className="search-books-input-wrapper">
                     <input
                         type="text"
@@ -52,7 +50,7 @@ function SearchBooks({ booksOnShelf, changeShelf }) {
             </div>
             <div className="search-books-results">
                 <ol className="books-grid">
-                    {booksFound.map(book => <Book book={book} changeShelf={changeShelf} />)}
+                    {booksFound.map(book => <Book key={book.id} book={book} changeShelf={changeShelf} />)}
                 </ol>
             </div>
         </div>
