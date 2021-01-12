@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 My Library App retrieves information on books through the BooksAPI.  It allows users to search for books and organize them into 3 shelves of Currently Reading, Want To Read and Read.  Clicking on a book cover will open a display Modal that contains the books description.
 See the [SEARCH_TERMS.md](SEARCH_TERMS.md) for valid search terms the API will respond to.
 
+## Setup
+
+To install project dependencies run `npm install` in the CLI.
+
 ## Available Scripts
 
 In the project directory, you can run:
