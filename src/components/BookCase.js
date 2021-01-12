@@ -5,6 +5,21 @@ import PropTypes from 'prop-types'
 
 function BookCase({sortShelf, changeShelf}) {
     
+    const shelves = [
+        {
+          title: 'Currently Reading',
+          id: 'currentlyReading'
+        },
+        {
+          title: 'Want To Read',
+          id: 'wantToRead'
+        },
+        {
+          title: 'Read',
+          id: 'read'
+        }
+      ];
+
     return (
         <div className="list-books">
             <div className="list-books-title">
@@ -12,26 +27,19 @@ function BookCase({sortShelf, changeShelf}) {
             </div>
             <div className="list-books-content">
                 <div>
-                    <BookShelf
-                        books={sortShelf('currentlyReading')}
-                        shelf={'Currently Reading'}
-                        changeShelf={changeShelf}
-                    />
-                    <BookShelf
-                        books={sortShelf('wantToRead')}
-                        shelf={'Want To Read'}
-                        changeShelf={changeShelf}
-                    />
-                    <BookShelf
-                        books={sortShelf('read')}
-                        shelf={'Read'}
-                        changeShelf={changeShelf}
-                    />
+                    {shelves.map(shelf => (
+                        <BookShelf
+                            key={shelf.id}
+                            books={sortShelf(shelf.id)}
+                            shelf={shelf.title}
+                            changeShelf={changeShelf}
+                        />
+                    ))}
                 </div>
             </div>
             <div className="open-search">
-                <Link to='/search' >
-                    <button>Add a book</button>
+                <Link to='/search'>
+                    <button>Add Book</button>
                 </Link>
             </div>
         </div>
