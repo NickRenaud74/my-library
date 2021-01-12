@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import BookModal from './BookModal'
+import PropTypes from 'prop-types'
 
 function Book({ book, changeShelf }) {
     const [showModal, setShowModal] = useState(false)
@@ -45,6 +46,11 @@ function Book({ book, changeShelf }) {
             </div>
         </li>
     )
+}
+
+Book.propTypes = {
+    book: PropTypes.object,
+    changeShelf: PropTypes.func
 }
 
 export default Book

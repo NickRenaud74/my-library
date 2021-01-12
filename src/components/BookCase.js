@@ -1,6 +1,7 @@
 import React from 'react'
 import BookShelf from './BookShelf'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function BookCase({sortShelf, changeShelf}) {
     
@@ -35,6 +36,11 @@ function BookCase({sortShelf, changeShelf}) {
             </div>
         </div>
     )
+}
+
+BookCase.propTypes = {
+    sortShelf: PropTypes.func,
+    changeShelf: PropTypes.func
 }
 
 export default BookCase

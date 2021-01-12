@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function BookModal({ book, closeModal}) {
     return (
@@ -33,6 +34,11 @@ function BookModal({ book, closeModal}) {
 
         </div>
     )
+}
+
+BookModal.propTypes = {
+    book: PropTypes.object,
+    closeModal: PropTypes.func
 }
 
 export default BookModal

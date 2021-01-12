@@ -121,6 +121,7 @@ body, .app {
   width: 50px;
   height: 53px;
   background-position: center;
+  background-color: var(--main-color);
   background-image: url('./icons/arrow-back.svg');
   background-repeat: no-repeat;
   background-size: 28px;

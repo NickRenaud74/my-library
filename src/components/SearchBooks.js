@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import Book from './Book'
 import * as BooksAPI from '../BooksAPI'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 function SearchBooks({ booksOnShelf, changeShelf }) {
     
@@ -57,6 +58,11 @@ function SearchBooks({ booksOnShelf, changeShelf }) {
         </div>
 
     )
+}
+
+SearchBooks.propTypes = {
+    booksOnShelf: PropTypes.array,
+    changeShelf: PropTypes.func
 }
 
 export default SearchBooks;
