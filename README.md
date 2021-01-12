@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About 
-My Library App retrieves information on books through the BooksAPI.  It allows users to search for books and organize them into 3 shelves of Currently Reading, Want To Read and Read.  
+My Library App retrieves information on books through the BooksAPI.  It allows users to search for books and organize them into 3 shelves of Currently Reading, Want To Read and Read.  Clicking on a book cover will open a display Modal that contains the books description.
 See the [SEARCH_TERMS.md](SEARCH_TERMS.md) for valid search terms the API will respond to.
 
 ## Available Scripts
